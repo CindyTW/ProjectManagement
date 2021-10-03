@@ -1,0 +1,88 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Create new homepage banner",
+      "details": "Lorem ipsum lorem ipsum lorem.",
+      "complete": true,
+      "startDate": "04-02-2021",
+      "endDate": "04-21-2021",
+      "tasks": [
+        {
+          "id": 1,
+          "name": "Idenity SIte location",
+          "startDate": "04-02-2021",
+          "duration": 3,
+          "progress": 50,
+          "complete": false
+        },
+        {
+          "id": 2,
+          "name": "Perform Soil test",
+          "startDate": "04-02-2021",
+          "duration": 3,
+          "progress": 70,
+          "complete": false
+        },
+        {
+          "id": 3,
+          "name": "Soil test approval",
+          "startDate": "04-02-2021",
+          "duration": 3,
+          "progress": "2FS",
+          "complete": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Make marketing email",
+      "details": "Lorem ipsum",
+      "complete": false,
+      "startDate": "04-02-2021",
+      "endDate": "04-21-2021",
+      "tasks": [
+        {
+          "id": 3,
+          "name": "Develop floor plan for estimation",
+          "startDate": "04-04-2021",
+          "duration": 4,
+          "progress": 50,
+          "complete": false
+        },
+        {
+          "id": 4,
+          "name": "List materials",
+          "startDate": "04-04-2021",
+          "duration": 4,
+          "progress": 50,
+          "complete": false
+        },
+        {
+          "id": 5,
+          "name": "Estimation approval",
+          "startDate": "04-04-2021",
+          "duration": 4,
+          "progress": "6SS",
+          "complete": false
+        }
+      ]
+    },
+    {
+      "title": "Update the Promo Links",
+      "details": "Make sure all the promo links and coupon codes are up to date!!!!!",
+      "complete": false,
+      "startDate": "08-01-2021",
+      "endDate": "08-15-2021",
+      "id": 5231
+    },
+    {
+      "title": "Create Web Gantt Charts",
+      "details": "Do it now by using Vue framework-so difficult!",
+      "complete": false,
+      "startDate": "09-29-2021",
+      "endDate": "09-30-2021",
+      "id": 5232
+    }
+  ]
+}
