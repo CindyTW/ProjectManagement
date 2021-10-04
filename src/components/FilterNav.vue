@@ -28,13 +28,14 @@
     <div v-for="project in filteredProjects" :key="project.id">
       <h3 :project="project"> {{ project.title }}</h3>
     </div>
-
-  <!-- Add Button -->   
   </div>
+  <!-- Add Button -->   
+  
     <div class="btn-addProject">
       <router-link :to="{ name: 'AddProject' }"><strong>新增專案</strong></router-link>
     </div>
-</template>
+  
+</template> 
 
 <script>
 export default {
@@ -116,7 +117,8 @@ export default {
  .btn-addProject a {
   display: inline;
   float: right;
-  margin: -78px 0px 0px 20px;
+  /* margin: -78px 0px 0px 20px; */
+  margin: -78px auto;
   background:linear-gradient(to bottom, rgb(84, 230, 181),rgb(20, 163, 115)); 
   color: white;
   padding: 13px 35px;

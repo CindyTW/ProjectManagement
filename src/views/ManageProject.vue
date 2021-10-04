@@ -7,7 +7,7 @@
 //=============================================================================
 <template>
   
-    <label>{{ this.title }} Gantt view </label>
+    <label class="gantt_title">{{ this.title }} 甘特圖 </label>
     <label>{{ this.detail }}</label>
     
     <frappe-gantt
@@ -20,10 +20,10 @@
     />
 
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-        <button class="btn btn-outline-primary" @click="handleSubmit">Ok</button>
-        <button class="btn btn-outline-warning" @click="addRandomTask">Add Random Task</button>
-        <button class="btn btn-outline-danger" @click="cancel" >Cancel</button>
+    <div class="d-flex">
+        <button class="btn-outline" @click="handleSubmit"><strong>回主頁</strong></button>
+        <button class="btn-outline" @click="addRandomTask"><strong>新增任務</strong></button>
+        <button class="btn-outline" @click="cancel"><strong>取消</strong></button>
     </div>
 
 </template>
@@ -189,4 +189,45 @@ export default {
   margin-left: 120px;
   margin-right: 170px;
 }
+
+label.gantt_title {
+    font-size: 32px;
+    text-align: center;
+    color: #a3a3a3;
+    
+}
+
+/* .d-grid {
+    display: grid;
+    grid-template-columns: 4 4 4;
+    grid-gap: 20px;
+    padding: 5px;
+} */
+
+
+.d-flex, .btn-outline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+    border-radius: 8px;
+    padding: 8px 5px;
+    width: 30%;
+    font-size: 18px;
+    
+}
+
+.btn-outline {
+    border: 2px solid #00ce89;
+    color: #00ce89;
+}
+
+.btn-outline:hover {
+    background:#00ce89 ;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
 </style>

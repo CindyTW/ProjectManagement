@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import SingleProject from "../components/SingleProject.vue";
-import FilterNav from "../components/FilterNav.vue";
+import SingleProject from "../components/SingleProject.vue"
+import FilterNav from "../components/FilterNav.vue"
 
 export default {
   name: "Home",

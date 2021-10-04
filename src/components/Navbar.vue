@@ -46,20 +46,21 @@ header{
   display: inline-block;
   text-decoration: none;
   margin: 0px 10px;
-  color: rgb(0, 17, 173);
+  /* color: rgb(0, 17, 173);   */
+  color: #1e2087;
   font-size: 22px;
   outline:none;
 }
 .main-nav a:hover {
   color: rgb(255,255,255);
   /* border-bottom: 2px solid rgb(255,255,255); */
-  background: rgb(25, 47, 245);
+  background: #1e2087 ;
   border-radius: 10px;
   padding: 5px 10px;
   outline:none;
 }
 a.router-link-active {
-  border-bottom: 2px solid rgb(0, 17, 173);
+  border-bottom: 2px solid #1e2087;
   padding-bottom: 4px; 
 }
 </style>
