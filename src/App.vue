@@ -4,12 +4,12 @@
 </template>
 
 <script>
-
 // import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar.vue";
 
 export default {
   components: { Navbar },
+  name: "app",
 };
 </script>
 
@@ -25,7 +25,12 @@ body {
   margin: 0 auto;
   color: #555;
 }
+h2 {
+  text-align: center;
+  color: rgb(129, 129, 129);
+}
 *:focus {
-  outline-color:#00ce89; 
-} 
+  outline-color: #00ce89;
+}
 </style>
+

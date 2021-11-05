@@ -8,21 +8,21 @@
           @delete="handleDelete"
           @complete="handleComplete"
         />
-          <div v-for="task in filteredTasks" :key="task.id">
+        <div v-for="task in filteredTasks" :key="task.id">
           <SingleTask
-          :task="task"
-          @delete="handleDelete"
-          @complete="handleComplete"
-        />
-      </div>
+            :task="task"
+            @delete="handleDelete"
+            @complete="handleComplete"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import SingleProject from "../components/SingleProject.vue"
-import FilterNav from "../components/FilterNav.vue"
+import SingleProject from "../components/SingleProject.vue";
+import FilterNav from "../components/FilterNav.vue";
 
 export default {
   name: "Home",
@@ -31,6 +31,7 @@ export default {
     return {
       projects: [],
       current: "all",
+      search: "",
     };
   },
   mounted() {

@@ -25,7 +25,6 @@
 export default {
     data() {
     return {
-      // projects:[],
       tasks:[],
       showDetails: false,
       uri: "http://localhost:3000/projects/" + this.task.id,

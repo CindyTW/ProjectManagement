@@ -1,12 +1,12 @@
 <template>
   <div class="project" :class="{ complete: project.complete }">
     <div class="actions">
-      <h3 @click="showDetails = !showDetails">專案: {{ project.title}}</h3>
+      <h3 @click="showDetails = !showDetails">專案: {{ project.title }}</h3>
       <div class="icons">
         <router-link :to="{ name: 'EditProject', params: { id: project.id } }">
           <span class="material-icons">edit</span>
         </router-link>
-        <router-link :to="{ name: 'ManageProject', params: { id: project.id } }">
+        <router-link :to="{ name: 'GanttChart', params: { id: project.id } }">
           <span class="material-icons">event_note</span>
         </router-link>
         <span @click="deleteProject" class="material-icons">delete</span>
@@ -14,23 +14,24 @@
       </div>
     </div>
     <div v-if="showDetails" class="details">
-      <p>概要: {{ project.details}}  <strong>‖</strong>  專案開始:{{ project.startDate}} ~ 專案結束: {{ project.endDate }} </p>
-    </div> 
-    <button class="btn">甘特圖</button> <button class="btn" @click="handleTask">新增任務</button>
+      <p>
+        概要: {{ project.details }} <strong>‖</strong> 專案開始:{{
+          project.dateStart
+        }}
+        ~ 專案結束: {{ project.dateEnd }}
+      </p>
+    </div>
+    <button @click="redirect" class="btn">甘特圖</button>
+    <button class="btn" @click="handleTask">新增任務</button>
   </div>
- 
 
-
-<!-- <SingleTask /> -->
-
+  <!-- <SingleTask /> -->
 </template>
 
 <script>
-// import SingleTask from './SingleTask.vue'
 export default {
   props: ["project", "task"],
-  // components: { SingleTask },
-   data() {
+  data() {
     return {
       showDetails: false,
       uri: "http://localhost:3000/projects/" + this.project.id,
@@ -53,11 +54,12 @@ export default {
         })
         .catch((err) => console.log(err));
     },
-    handleTask(){
-      fetch("http://localhost:3000/projects/tasks/" + this.task.id)
-      .then( () => tasks.data )
-      .catch(err=> console.log(err))
-    }
+    handleTask() {
+      this.$router.push("/addtask");
+    },
+    redirect() {
+      this.$router.push("/ganttchart/:id");
+    },
   },
 };
 </script>
@@ -69,7 +71,7 @@ export default {
   padding: 10px 20px;
   border-radius: 4px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.05);
-  border-left: 5px solid #e90074;
+  border-left: 7px solid #e90074;
 }
 h3 {
   cursor: pointer;
@@ -89,20 +91,20 @@ h3 {
   color: #777;
 }
 .project.complete {
-  border-left: 5px solid #00ce89;
+  border-left: 7px solid #00ce89;
 }
 .project.complete .tick {
   color: #00ce89;
 }
-.project button{
+.project button {
   border-radius: 8px;
   margin: 0 10px;
   border: none;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
   padding: 8px;
 }
-.project button:hover{
-  background: linear-gradient(to bottom, rgb(84, 230, 181),rgb(20, 163, 115));
+.project button:hover {
+  background: linear-gradient(to bottom, rgb(84, 230, 181), rgb(20, 163, 115));
   color: white;
   cursor: pointer;
 }

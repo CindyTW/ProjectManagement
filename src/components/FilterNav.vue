@@ -1,45 +1,52 @@
 <template>
-
-<div class="filter-nav">
-  <nav class="left-nav">
-    <button @click="updateFilter('all')" :class="{ active: current === 'all' }">
-      查看全部
-    </button>
-    <button
-      @click="updateFilter('completed')"
-      :class="{ active: current === 'completed' }"
-    >
-      已完成
-    </button>
-    <button
-      @click="updateFilter('ongoing')"
-      :class="{ active: current === 'ongoing' }"
-    >
-      進行中
-    </button>
-    </nav>  
-
-     <!-- Search Bar -->
-     <nav class="right-nav">
-      <input class="search-bar" type="text" placeholder="專案名稱" v-model="search">
-      <button class="btn-search" @click="search(project)">搜尋</button> 
+  <div class="filter-nav">
+    <nav class="left-nav">
+      <button
+        @click="updateFilter('all')"
+        :class="{ active: current === 'all' }"
+      >
+        查看全部
+      </button>
+      <button
+        @click="updateFilter('completed')"
+        :class="{ active: current === 'completed' }"
+      >
+        已完成
+      </button>
+      <button
+        @click="updateFilter('ongoing')"
+        :class="{ active: current === 'ongoing' }"
+      >
+        進行中
+      </button>
     </nav>
 
-    <div v-for="project in filteredProjects" :key="project.id">
-      <h3 :project="project"> {{ project.title }}</h3>
-    </div>
+    <!-- Search Bar -->
+    <nav class="right-nav">
+      <input
+        class="search-bar"
+        type="text"
+        placeholder="專案名稱"
+        v-model="search"
+      />
+      <div v-for="project in filteredProjects" :key="project.id">
+        <h3 :project="project">{{ project.title }}</h3>
+      </div>
+      <button class="btn-search" @click="search(project)">搜尋</button>
+    </nav>
   </div>
-  <!-- Add Button -->   
-  
-    <div class="btn-addProject">
-      <router-link :to="{ name: 'AddProject' }"><strong>新增專案</strong></router-link>
-    </div>
-  
+  <!-- Add Button -->
+
+  <div class="btn-addProject">
+    <router-link :to="{ name: 'AddProject' }"
+      ><strong>新增專案</strong></router-link
+    >
+  </div>
 </template> 
 
 <script>
 export default {
-  props: ["current"],
+  props: ["current", "project"],
   methods: {
     updateFilter(by) {
       this.$emit("filterChange", by);
@@ -76,13 +83,14 @@ export default {
   border: none;
   padding: 10px;
 }
-.left-nav button:hover{
+.left-nav button:hover {
   background-color: #00ce89;
   color: white;
+  font-size: 18px;
 }
- .btn-addProject button a {
+.btn-addProject button a {
   text-decoration: none;
-  background:#00ce89;
+  background: #00ce89;
   color: white;
   padding: 10px 20px;
   border-radius: 10px;
@@ -92,38 +100,38 @@ export default {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width:35%;
+  width: 35%;
 }
-.search-bar{
+.search-bar {
   border: 1px solid rgb(182, 182, 182);
   border-radius: 10px;
 }
 .right-nav .btn-search {
   border: 2px solid #00ce89;
   color: #00ce89;
-  border-radius:10px;
-  width:25%;
-  margin:10px;
+  border-radius: 10px;
+  width: 25%;
+  margin: 10px;
   padding: 6px 1px;
 }
 .btn-search:hover {
-  background:#00ce89;
+  background: #00ce89;
   color: white;
 }
 ::placeholder {
-  color:#bbb;
+  color: #bbb;
   font-size: 15px;
 }
- .btn-addProject a {
+.btn-addProject a {
   display: inline;
   float: right;
   /* margin: -78px 0px 0px 20px; */
   margin: -78px auto;
-  background:linear-gradient(to bottom, rgb(84, 230, 181),rgb(20, 163, 115)); 
+  background: linear-gradient(to bottom, rgb(84, 230, 181), rgb(20, 163, 115));
   color: white;
   padding: 13px 35px;
   border-radius: 15px;
-  width: 70px;
+  width: 80px;
   font-size: 17.5px;
   text-decoration: none;
   text-align: center;

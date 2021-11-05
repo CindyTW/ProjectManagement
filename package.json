@@ -10,10 +10,14 @@
     "@popperjs/core": "^2.10.1",
     "bootstrap": "^5.1.0",
     "core-js": "^3.6.5",
+    "dayjs": "^1.10.7",
     "firebase": "^9.1.1",
     "frappe-gantt": "^0.5.0",
+    "gantt-elastic-header": "^0.1.11",
     "git": "^0.1.5",
+    "json-serve": "^0.1.0",
     "json-server": "^0.16.3",
+    "smart-webcomponents": "^10.0.0",
     "uuid": "^8.3.2",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
@@ -29,5 +33,13 @@
   "description": "## Project setup ``` npm install ```",
   "main": "babel.config.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CindyTW/ProjectManagement.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CindyTW/ProjectManagement/issues"
+  },
+  "homepage": "https://github.com/CindyTW/ProjectManagement#readme"
 }
